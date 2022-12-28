@@ -1,7 +1,7 @@
 import requests
 from twilio.rest import Client
 import os
-account_sid = "AC6eb177de327d1e373b4f65c84b2da52f"
+account_sid = "YOUR OWN ACCOUNT_SID" #AC6eb177de327d1e373b4f65c84b2da52f
 auth_token = os.environ.get("AUTH_TOKEN")
 API_KEY = os.environ.get("OWM_API_KEY")
 END_POINT = "http://api.weatherapi.com/v1/forecast.json"
@@ -29,7 +29,7 @@ if will_rain:
     message = client.messages \
         .create(
         body="It's going to rain today. Remember to bring an Umbrella.",
-        from_ = '+1 978 637 6556',
+        from_ = 'YOUR OWN ASSIGNED MOBILE NUMBER',#'+1 978 637 6556',
         to= f'{os.environ.get("PH_NO")}'
     )
     print(message.status)
